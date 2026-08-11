@@ -1,0 +1,26 @@
+[Unit]
+Description=Rolling Ball Game Server
+After=network.target
+
+[Service]
+# 把下面的路径改成你实际放游戏文件的目录
+WorkingDirectory=/opt/rolling-ball
+ExecStart=/usr/bin/python3 /opt/rolling-ball/server.py
+
+# 环境变量（与 start.sh 保持一致）
+Environment=PORT=8080
+Environment=ADMIN_PASS=pc767d54
+Environment=ADMIN_REMOTE=1
+Environment=TRUST_XFF=1
+
+# 崩溃自动重启
+Restart=always
+RestartSec=3
+
+# 运行用户：改成你自己的普通用户（不要用 root）。
+# 如需专用用户可新建： sudo useradd -r -s /usr/sbin/nologin rollingball
+# 然后下面填 User=rollingball，并把目录属主改成它： chown -R rollingball /opt/rolling-ball
+User=ubuntu
+
+[Install]
+WantedBy=multi-user.target

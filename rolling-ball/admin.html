@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>滚动的小球 - 后台管理</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 100%; min-height: 100vh;
+    background: #0f172a; color: #e2e8f0;
+    font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif;
+  }
+  /* ---- Login ---- */
+  #loginPage {
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    min-height: 100vh;
+  }
+  #loginPage h1 {
+    font-size: 28px; color: #60a5fa; margin-bottom: 8px;
+    text-shadow: 0 2px 12px rgba(59,130,246,.4);
+  }
+  #loginPage .subtitle {
+    font-size: 13px; color: #64748b; margin-bottom: 32px;
+  }
+  #loginPage .form-box {
+    background: #1e293b; border-radius: 16px; padding: 36px 40px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.4); width: 360px;
+  }
+  #loginPage input {
+    width: 100%; padding: 14px 18px;
+    border: 2px solid #3b82f6; border-radius: 12px;
+    font-size: 16px; background: #0f172a; color: #fff; outline: none;
+    margin-bottom: 14px; font-family: inherit;
+  }
+  #loginPage input::placeholder { color: #475569; }
+  #loginPage input:focus { border-color: #60a5fa; box-shadow: 0 0 0 3px rgba(59,130,246,.2); }
+  #loginPage button {
+    width: 100%; padding: 14px; background: #3b82f6; color: #fff;
+    border: none; border-radius: 12px; font-size: 16px;
+    font-weight: bold; cursor: pointer; transition: all .2s; font-family: inherit;
+  }
+  #loginPage button:hover { background: #2563eb; }
+  #loginError {
+    color: #ef4444; font-size: 13px; margin-top: 10px; text-align: center;
+    display: none;
+  }
+  /* ---- Dashboard ---- */
+  #dashboard { display: none; }
+  .topbar {
+    background: #1e293b; padding: 16px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid #334155;
+  }
+  .topbar h1 { font-size: 20px; color: #60a5fa; }
+  .topbar .admin-info { font-size: 13px; color: #64748b; }
+  .topbar .logout-btn {
+    padding: 8px 20px; background: #ef4444; color: #fff;
+    border: none; border-radius: 8px; font-size: 13px;
+    cursor: pointer; font-family: inherit; transition: background .2s;
+  }
+  .topbar .logout-btn:hover { background: #dc2626; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 24px 32px; }
+  /* Stats cards */
+  .stats-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 28px;
+  }
+  .stat-card {
+    background: #1e293b; border-radius: 14px; padding: 24px;
+    text-align: center; border: 1px solid #334155;
+  }
+  .stat-card .label { font-size: 12px; color: #64748b; margin-bottom: 8px; }
+  .stat-card .value { font-size: 28px; font-weight: bold; color: #60a5fa; }
+  /* Tabs */
+  .tabs {
+    display: flex; gap: 4px; margin-bottom: 20px;
+    background: #1e293b; border-radius: 12px; padding: 4px;
+  }
+  .tab-btn {
+    flex: 1; padding: 12px; background: transparent; color: #64748b;
+    border: none; border-radius: 8px; font-size: 14px; font-weight: 600;
+    cursor: pointer; transition: all .2s; font-family: inherit;
+  }
+  .tab-btn.active { background: #3b82f6; color: #fff; }
+  .tab-btn:hover:not(.active) { background: #334155; color: #cbd5e1; }
+  /* Tables */
+  .table-wrap {
+    background: #1e293b; border-radius: 14px; overflow: hidden;
+    border: 1px solid #334155;
+  }
+  table { width: 100%; border-collapse: collapse; }
+  th {
+    background: #334155; padding: 14px 16px; text-align: left;
+    font-size: 13px; color: #94a3b8; font-weight: 600;
+    border-bottom: 1px solid #475569;
+  }
+  td {
+    padding: 12px 16px; font-size: 14px; color: #cbd5e1;
+    border-bottom: 1px solid #334155;
+  }
+  tr:hover td { background: #1e293b; }
+  tr:last-child td { border-bottom: none; }
+  .action-btn {
+    padding: 6px 14px; border: none; border-radius: 6px;
+    font-size: 12px; cursor: pointer; font-family: inherit;
+    margin-right: 6px; transition: all .2s;
+  }
+  .btn-danger { background: #ef4444; color: #fff; }
+  .btn-danger:hover { background: #dc2626; }
+  .btn-warning { background: #f59e0b; color: #fff; }
+  .btn-warning:hover { background: #d97706; }
+  .btn-info { background: #3b82f6; color: #fff; }
+  .btn-info:hover { background: #2563eb; }
+  .badge {
+    display: inline-block; padding: 3px 10px; border-radius: 20px;
+    font-size: 11px; font-weight: 600;
+  }
+  .badge-green { background: #064e3b; color: #34d399; }
+  .badge-gray { background: #374151; color: #9ca3af; }
+  .empty-state {
+    text-align: center; padding: 48px; color: #64748b; font-size: 15px;
+  }
+  /* Modal */
+  .modal-overlay {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,.6); display: none;
+    align-items: center; justify-content: center; z-index: 100;
+  }
+  .modal-overlay.show { display: flex; }
+  .modal {
+    background: #1e293b; border-radius: 16px; padding: 32px;
+    width: 400px; box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  }
+  .modal h3 { font-size: 18px; color: #f8fafc; margin-bottom: 20px; }
+  .modal p { font-size: 14px; color: #94a3b8; margin-bottom: 24px; line-height: 1.6; }
+  .modal .modal-btns { display: flex; gap: 12px; }
+  .modal .modal-btns button {
+    flex: 1; padding: 12px; border: none; border-radius: 10px;
+    font-size: 14px; font-weight: 600; cursor: pointer; font-family: inherit;
+  }
+  .modal .btn-cancel { background: #334155; color: #cbd5e1; }
+  .modal .btn-cancel:hover { background: #475569; }
+  .modal .btn-confirm { background: #ef4444; color: #fff; }
+  .modal .btn-confirm:hover { background: #dc2626; }
+  .modal input {
+    width: 100%; padding: 12px 16px; border: 2px solid #3b82f6;
+    border-radius: 10px; font-size: 15px; background: #0f172a; color: #fff;
+    outline: none; margin-bottom: 16px; font-family: inherit;
+  }
+  /* Edit modal */
+  .modal-edit {
+    background: #1e293b; border-radius: 16px; padding: 32px;
+    width: 480px; max-height: 90vh; overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  }
+  .modal-edit h3 { font-size: 18px; color: #f8fafc; margin-bottom: 24px; }
+  .edit-field { margin-bottom: 18px; }
+  .edit-field label {
+    display: block; font-size: 12px; color: #94a3b8;
+    margin-bottom: 6px; font-weight: 600;
+  }
+  .edit-field input, .edit-field select {
+    width: 100%; padding: 10px 14px; border: 2px solid #334155;
+    border-radius: 8px; font-size: 14px; background: #0f172a; color: #fff;
+    outline: none; font-family: inherit; transition: border-color .2s;
+  }
+  .edit-field input:focus, .edit-field select:focus { border-color: #3b82f6; }
+  .edit-field .hint { font-size: 11px; color: #64748b; margin-top: 4px; }
+  .edit-row { display: flex; gap: 12px; }
+  .edit-row .edit-field { flex: 1; }
+  .edit-btns { display: flex; gap: 12px; margin-top: 24px; }
+  .edit-btns button {
+    flex: 1; padding: 12px; border: none; border-radius: 10px;
+    font-size: 14px; font-weight: 600; cursor: pointer; font-family: inherit;
+  }
+  .edit-btns .btn-save { background: #3b82f6; color: #fff; }
+  .edit-btns .btn-save:hover { background: #2563eb; }
+  .edit-btns .btn-cancel { background: #334155; color: #cbd5e1; }
+  .edit-btns .btn-cancel:hover { background: #475569; }
+  /* Toast */
+  #toast {
+    position: fixed; top: 24px; left: 50%; transform: translateX(-50%);
+    background: #1e293b; color: #34d399; padding: 14px 28px;
+    border-radius: 10px; font-size: 14px; font-weight: 600;
+    border: 1px solid #064e3b; box-shadow: 0 8px 24px rgba(0,0,0,.3);
+    z-index: 200; display: none; transition: opacity .3s;
+  }
+  #toast.error { color: #ef4444; border-color: #7f1d1d; }
+  #toast.show { display: block; }
+</style>
+</head>
+<body>
+
+<!-- Login Page -->
+<div id="loginPage">
+  <h1>滚动的小球 · 后台管理</h1>
+  <div class="form-box">
+    <input type="text" id="adminUser" placeholder="管理员账号（user）" autocomplete="off">
+    <input type="password" id="adminPass" placeholder="管理员密码" autocomplete="off">
+    <button id="loginBtn">登录后台</button>
+    <div id="loginError"></div>
+  </div>
+</div>
+
+<!-- Dashboard -->
+<div id="dashboard">
+  <div class="topbar">
+    <h1>滚动的小球 · 后台管理</h1>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <span class="admin-info" id="adminIpInfo"></span>
+      <button class="logout-btn" id="logoutBtn">退出登录</button>
+    </div>
+  </div>
+  <div class="container">
+    <!-- Stats -->
+    <div class="stats-grid" id="statsGrid">
+      <div class="stat-card"><div class="label">注册用户</div><div class="value" id="statUsers">-</div></div>
+      <div class="stat-card"><div class="label">总金币流通</div><div class="value" id="statCoins">-</div></div>
+      <div class="stat-card"><div class="label">排行榜条目</div><div class="value" id="statLb">-</div></div>
+      <div class="stat-card"><div class="label">已绑邮箱</div><div class="value" id="statEmail">-</div></div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="users">用户管理</button>
+      <button class="tab-btn" data-tab="leaderboards">排行榜管理</button>
+      <button class="tab-btn" data-tab="announcement">公告设置</button>
+      <button class="tab-btn" data-tab="bans">封禁管理</button>
+    </div>
+
+    <!-- Users Tab -->
+    <div id="tab-users" class="tab-content">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>用户名</th>
+              <th>设备UID</th>
+              <th>IP</th>
+              <th>金币</th>
+              <th>邮箱</th>
+              <th>小球皮肤</th>
+              <th>背景皮肤</th>
+              <th>拥有皮肤数</th>
+              <th>存档</th>
+              <th>最后上线</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody id="usersTbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Leaderboards Tab -->
+    <div id="tab-leaderboards" class="tab-content" style="display:none;">
+      <div class="table-wrap" style="margin-bottom:20px;">
+        <div style="padding:16px 20px;display:flex;align-items:center;justify-content:space-between;">
+          <h3 style="color:#60a5fa;font-size:16px;">关卡榜</h3>
+          <button class="action-btn btn-danger" onclick="clearLeaderboard('level')">清空关卡榜</button>
+        </div>
+        <table><thead><tr><th>排名</th><th>用户名</th><th>关卡数</th></tr></thead><tbody id="lbLevel"></tbody></table>
+      </div>
+      <div class="table-wrap" style="margin-bottom:20px;">
+        <div style="padding:16px 20px;display:flex;align-items:center;justify-content:space-between;">
+          <h3 style="color:#60a5fa;font-size:16px;">金币榜</h3>
+          <button class="action-btn btn-danger" onclick="clearLeaderboard('coins')">清空金币榜</button>
+        </div>
+        <table><thead><tr><th>排名</th><th>用户名</th><th>金币</th></tr></thead><tbody id="lbCoins"></tbody></table>
+      </div>
+      <div class="table-wrap">
+        <div style="padding:16px 20px;display:flex;align-items:center;justify-content:space-between;">
+          <h3 style="color:#60a5fa;font-size:16px;">分数榜</h3>
+          <button class="action-btn btn-danger" onclick="clearLeaderboard('score')">清空分数榜</button>
+        </div>
+        <table><thead><tr><th>排名</th><th>用户名</th><th>分数</th></tr></thead><tbody id="lbScore"></tbody></table>
+      </div>
+    </div>
+
+    <!-- Announcement Tab -->
+    <div id="tab-announcement" class="tab-content" style="display:none;">
+      <div class="table-wrap" style="padding:24px;">
+        <h3 style="color:#60a5fa;font-size:16px;margin-bottom:18px;">进入游戏公告（欢迎弹窗）</h3>
+        <div class="edit-field">
+          <label>标题</label>
+          <input type="text" id="annTitle" maxlength="50" placeholder="欢迎来到滚动的小球">
+        </div>
+        <div class="edit-field">
+          <label>正文</label>
+          <textarea id="annText" rows="4" maxlength="500" placeholder="如有疑问请联系服主！" style="width:100%;padding:10px 14px;border:2px solid #334155;border-radius:8px;font-size:14px;background:#0f172a;color:#fff;outline:none;font-family:inherit;resize:vertical;"></textarea>
+        </div>
+        <div class="edit-field">
+          <label>联系方式（如 QQ / 微信，留空则不显示）</label>
+          <input type="text" id="annContact" maxlength="100" placeholder="QQ：2917149421">
+        </div>
+        <div class="edit-field" style="display:flex;align-items:center;gap:10px;">
+          <input type="checkbox" id="annEnabled" style="width:18px;height:18px;accent-color:#3b82f6;cursor:pointer;">
+          <label style="margin:0;cursor:pointer;" for="annEnabled">启用公告（关闭后进入游戏不再弹窗）</label>
+        </div>
+        <div class="edit-btns">
+          <button class="btn-cancel" id="annResetBtn" style="background:#334155;color:#cbd5e1;border:none;border-radius:10px;padding:12px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;">重置为默认</button>
+          <button class="btn-save" id="annSaveBtn" style="background:#3b82f6;color:#fff;border:none;border-radius:10px;padding:12px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;">保存公告</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ban Management Tab -->
+    <div id="tab-bans" class="tab-content" style="display:none;">
+      <div class="ban-section" style="background:#1e293b;border-radius:14px;padding:24px;margin-bottom:20px;border:1px solid #334155;">
+        <h3 style="color:#f87171;font-size:16px;margin-bottom:6px;">封禁账号</h3>
+        <p style="color:#64748b;font-size:12px;margin-bottom:16px;">按用户名封禁，该昵称将无法登录或注册。</p>
+        <div style="display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap;">
+          <input type="text" id="banAccountInput" placeholder="输入要封禁的用户名" style="flex:1;min-width:180px;padding:10px 14px;border:2px solid #334155;border-radius:8px;font-size:14px;background:#0f172a;color:#fff;outline:none;font-family:inherit;">
+          <input type="text" id="banAccountReason" placeholder="封禁原因（可选）" style="flex:1;min-width:160px;padding:10px 14px;border:2px solid #334155;border-radius:8px;font-size:14px;background:#0f172a;color:#fff;outline:none;font-family:inherit;">
+          <select id="banAccountDuration" style="padding:10px 12px;border:2px solid #334155;border-radius:8px;font-size:14px;background:#0f172a;color:#e2e8f0;outline:none;font-family:inherit;">
+            <option value="0">永久封禁</option>
+            <option value="3600">1 小时</option>
+            <option value="86400">1 天</option>
+            <option value="259200">3 天</option>
+            <option value="604800">7 天</option>
+            <option value="2592000">30 天</option>
+          </select>
+          <button class="action-btn btn-danger" onclick="banItem('account')">封禁</button>
+        </div>
+        <div id="banAccountList"></div>
+      </div>
+
+      <div class="ban-section" style="background:#1e293b;border-radius:14px;padding:24px;margin-bottom:20px;border:1px solid #334155;">
+        <h3 style="color:#f87171;font-size:16px;margin-bottom:6px;">封禁 IP</h3>
+        <p style="color:#64748b;font-size:12px;margin-bottom:16px;">按客户端 IP 封禁，该网络下所有请求将被拒绝（不能封内网/本机地址）。</p>
+        <div style="display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap;">
+          <input type="text" id="banIpInput" placeholder="输入要封禁的 IP，如 1.2.3.4" style="flex:1;min-width:180px;padding:10px 14px;border:2px solid #334155;border-radius:8px;font-size:14px;background:#0f172a;color:#fff;outline:none;font-family:inherit;">
+          <input type="text" id="banIpReason" placeholder="封禁原因（可选）" style="flex:1;min-width:160px;padding:10px 14px;border:2px solid #334155;border-radius:8px;font-size:14px;background:#0f172a;color:#fff;outline:none;font-family:inherit;">
+          <select id="banIpDuration" style="padding:10px 12px;border:2px solid #334155;border-radius:8px;font-size:14px;background:#0f172a;color:#e2e8f0;outline:none;font-family:inherit;">
+            <option value="0">永久封禁</option>
+            <option value="3600">1 小时</option>
+            <option value="86400">1 天</option>
+            <option value="259200">3 天</option>
+            <option value="604800">7 天</option>
+            <option value="2592000">30 天</option>
+          </select>
+          <button class="action-btn btn-danger" onclick="banItem('ip')">封禁</button>
+        </div>
+        <div id="banIpList"></div>
+      </div>
+
+      <div class="ban-section" style="background:#1e293b;border-radius:14px;padding:24px;margin-bottom:20px;border:1px solid #334155;">
+        <h3 style="color:#f87171;font-size:16px;margin-bottom:6px;">封禁机器</h3>
+        <p style="color:#64748b;font-size:12px;margin-bottom:16px;">按设备 UID 封禁，该浏览器/设备将无法登录（即使更换昵称）。可在用户列表复制设备UID。</p>
+        <div style="display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap;">
+          <input type="text" id="banUidInput" placeholder="输入要封禁的设备 UID，如 u1a2b3c4d5e6" style="flex:1;min-width:180px;padding:10px 14px;border:2px solid #334155;border-radius:8px;font-size:14px;background:#0f172a;color:#fff;outline:none;font-family:inherit;">
+          <input type="text" id="banUidReason" placeholder="封禁原因（可选）" style="flex:1;min-width:160px;padding:10px 14px;border:2px solid #334155;border-radius:8px;font-size:14px;background:#0f172a;color:#fff;outline:none;font-family:inherit;">
+          <select id="banUidDuration" style="padding:10px 12px;border:2px solid #334155;border-radius:8px;font-size:14px;background:#0f172a;color:#e2e8f0;outline:none;font-family:inherit;">
+            <option value="0">永久封禁</option>
+            <option value="3600">1 小时</option>
+            <option value="86400">1 天</option>
+            <option value="259200">3 天</option>
+            <option value="604800">7 天</option>
+            <option value="2592000">30 天</option>
+          </select>
+          <button class="action-btn btn-danger" onclick="banItem('uid')">封禁</button>
+        </div>
+        <div id="banUidList"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Confirm Modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modalBox">
+    <h3 id="modalTitle">确认操作</h3>
+    <p id="modalText"></p>
+    <div id="modalInputWrap" style="display:none;">
+      <input type="text" id="modalInput" placeholder="">
+    </div>
+    <div class="modal-btns">
+      <button class="btn-cancel" id="modalCancel">取消</button>
+      <button class="btn-confirm" id="modalConfirm">确认</button>
+    </div>
+  </div>
+</div>
+
+<!-- Edit User Modal -->
+<div class="modal-overlay" id="editModalOverlay">
+  <div class="modal-edit">
+    <h3>修改用户信息</h3>
+    <div class="edit-field">
+      <label>用户名（改名后原名称将失效）</label>
+      <input type="text" id="editName" maxlength="12" placeholder="输入新用户名">
+      <div class="hint">留空则不修改用户名</div>
+    </div>
+    <div class="edit-row">
+      <div class="edit-field">
+        <label>密码</label>
+        <input type="text" id="editPassword" maxlength="50" placeholder="输入新密码">
+        <div class="hint">留空则不修改密码</div>
+      </div>
+      <div class="edit-field">
+        <label>金币</label>
+        <input type="number" id="editCoins" min="0" placeholder="金币数量">
+      </div>
+    </div>
+    <div class="edit-field">
+      <label>邮箱</label>
+      <input type="text" id="editEmail" maxlength="50" placeholder="邮箱地址（留空解绑）">
+    </div>
+    <div class="edit-row">
+      <div class="edit-field">
+        <label>装备小球皮肤</label>
+        <select id="editBallSkin"></select>
+      </div>
+      <div class="edit-field">
+        <label>装备背景皮肤</label>
+        <select id="editBgSkin"></select>
+      </div>
+    </div>
+    <div class="edit-field">
+      <label>拥有小球皮肤（逗号分隔）</label>
+      <input type="text" id="editOwnedBall" placeholder="default,red,green...">
+    </div>
+    <div class="edit-field">
+      <label>拥有背景皮肤（逗号分隔）</label>
+      <input type="text" id="editOwnedBg" placeholder="default,sunset,ocean...">
+    </div>
+    <div class="edit-btns">
+      <button class="btn-cancel" id="editCancel">取消</button>
+      <button class="btn-save" id="editSave">保存修改</button>
+    </div>
+  </div>
+</div>
+
+<!-- User Detail Modal -->
+<div class="modal-overlay" id="userDetailModal">
+  <div class="modal-edit" style="width:560px;">
+    <h3>用户详情 · <span id="detailUserName" style="color:#60a5fa;"></span></h3>
+    <div id="detailBasic" style="margin-bottom:18px;"></div>
+    <div style="margin-bottom:18px;">
+      <label style="display:block;font-size:14px;color:#94a3b8;font-weight:600;margin-bottom:8px;">铭文详情（<span id="detailInsCount">0</span> 张）</label>
+      <div id="detailInsList" style="max-height:200px;overflow-y:auto;background:#0f172a;border:1px solid #334155;border-radius:8px;padding:10px;font-size:13px;"></div>
+    </div>
+    <div class="edit-field">
+      <label>抽奖爆率倍率（恶搞用）</label>
+      <div style="display:flex;gap:12px;align-items:center;">
+        <input type="number" id="detailDropRate" step="0.1" min="0" max="100" style="flex:1;">
+        <button class="btn-save" id="detailSetDropRate" style="background:#3b82f6;color:#fff;border:none;border-radius:10px;padding:12px 20px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;">设置爆率</button>
+      </div>
+      <div class="hint">1.0 = 正常概率；&gt;1 更易出好东西；&lt;1 更易「谢谢参与」。范围 0~100。</div>
+    </div>
+    <div class="edit-btns">
+      <button class="btn-cancel" id="detailClose">关闭</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast"></div>
+
+<script>
+const ADMIN_KEY = "rb_admin_auth";
+
+// ---- Auth ----
+function getAuthHeader() {
+  const stored = sessionStorage.getItem(ADMIN_KEY);
+  if (!stored) return null;
+  return "Basic " + btoa(stored);
+}
+
+function doLogin() {
+  const user = document.getElementById("adminUser").value.trim();
+  const pwd = document.getElementById("adminPass").value.trim();
+  const errEl = document.getElementById("loginError");
+  if (!user || !pwd) {
+    errEl.textContent = "请输入账号和密码";
+    errEl.style.display = "block";
+    return;
+  }
+  errEl.style.display = "none";
+  const auth = "Basic " + btoa(user + ":" + pwd);
+  fetch("/api/admin/check", { headers: { "Authorization": auth } })
+    .then(r => r.json())
+    .then(data => {
+      if (data.ok) {
+        sessionStorage.setItem(ADMIN_KEY, user + ":" + pwd);
+        showDashboard();
+      } else {
+        errEl.textContent = data.error || "登录失败";
+        errEl.style.display = "block";
+      }
+    })
+    .catch(() => {
+      errEl.textContent = "网络错误，请检查服务是否运行";
+      errEl.style.display = "block";
+    });
+}
+
+function showDashboard() {
+  document.getElementById("loginPage").style.display = "none";
+  document.getElementById("dashboard").style.display = "block";
+  loadStats();
+  loadUsers();
+  loadLeaderboards();
+  loadAnnouncementAdmin();
+  loadBans();
+}
+
+function logout() {
+  sessionStorage.removeItem(ADMIN_KEY);
+  document.getElementById("dashboard").style.display = "none";
+  document.getElementById("loginPage").style.display = "flex";
+  document.getElementById("adminUser").value = "";
+  document.getElementById("adminPass").value = "";
+}
+
+// ---- API helper ----
+function adminFetch(url, opts = {}) {
+  const auth = getAuthHeader();
+  if (!auth) { logout(); return Promise.reject("not auth"); }
+  opts.headers = opts.headers || {};
+  opts.headers["Authorization"] = auth;
+  opts.headers["Content-Type"] = "application/json";
+  return fetch(url, opts).then(r => {
+    if (r.status === 401 || r.status === 403) {
+      logout();
+      throw new Error("auth failed");
+    }
+    return r.json();
+  });
+}
+
+// ---- Stats ----
+function loadStats() {
+  adminFetch("/api/admin/stats")
+    .then(data => {
+      document.getElementById("statUsers").textContent = data.total_users;
+      document.getElementById("statCoins").textContent = data.total_coins;
+      document.getElementById("statLb").textContent = data.total_leaderboard_entries;
+      document.getElementById("statEmail").textContent = data.emails_bound;
+    })
+    .catch(() => {});
+}
+
+// ---- Users ----
+function loadUsers() {
+  adminFetch("/api/admin/users")
+    .then(data => {
+      const tbody = document.getElementById("usersTbody");
+      const users = Object.entries(data.users);
+      userCache = data.users;
+      if (users.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="11" class="empty-state">暂无注册用户</td></tr>';
+        return;
+      }
+      tbody.innerHTML = users.map(([name, u]) => {
+        const ballCount = (u.owned_ball_skins || []).length;
+        const bgCount = (u.owned_bg_skins || []).length;
+        const hasSave = u.save ? '<span class="badge badge-green">有</span>' : '<span class="badge badge-gray">无</span>';
+        const emailBadge = u.email
+          ? `<span class="badge badge-green">${escHtml(u.email)}</span>`
+          : '<span class="badge badge-gray">未绑定</span>';
+        const uid = u.uid || "";
+        const ip = u.last_ip || u.reg_ip || "-";
+        return `<tr>
+          <td style="font-weight:600;color:#f8fafc;">${escHtml(name)}</td>
+          <td style="font-family:monospace;font-size:12px;color:#94a3b8;">${escHtml(uid)}</td>
+          <td style="font-family:monospace;font-size:12px;color:#94a3b8;">${escHtml(ip)}</td>
+          <td>${u.coins || 0}</td>
+          <td>${emailBadge}</td>
+          <td>${escHtml(u.ball_skin || 'default')}</td>
+          <td>${escHtml(u.bg_skin || 'default')}</td>
+          <td>球${ballCount} / 背景${bgCount}</td>
+          <td>${hasSave}</td>
+          <td style="font-family:monospace;font-size:12px;color:#94a3b8;">${fmtTime(u.last_online)}</td>
+          <td>
+            <button class="action-btn btn-info" onclick="viewUserDetail('${escAttr(name)}')">详情</button>
+            <button class="action-btn btn-info" onclick="editUser('${escAttr(name)}')">修改</button>
+            <button class="action-btn btn-warning" onclick="setCoins('${escAttr(name)}')">改金币</button>
+            <button class="action-btn btn-warning" onclick="resetSave('${escAttr(name)}')">清存档</button>
+            <button class="action-btn btn-danger" onclick="quickBan('account','${escAttr(name)}')">封账号</button>
+            ${uid ? `<button class="action-btn btn-danger" onclick="quickBan('uid','${escAttr(uid)}')">封机器</button>` : ""}
+            ${ip && ip !== "-" ? `<button class="action-btn btn-danger" onclick="quickBan('ip','${escAttr(ip)}')">封IP</button>` : ""}
+            <button class="action-btn btn-danger" onclick="deleteUser('${escAttr(name)}')">删除</button>
+          </td>
+        </tr>`;
+      }).join("");
+    })
+    .catch(() => {});
+}
+
+// ---- Leaderboards ----
+function loadLeaderboards() {
+  adminFetch("/api/admin/leaderboards")
+    .then(data => {
+      const lbs = data.leaderboards;
+      renderLb("lbLevel", lbs.level, "关卡");
+      renderLb("lbCoins", lbs.coins, "金币");
+      renderLb("lbScore", lbs.score, "分数");
+    })
+    .catch(() => {});
+}
+
+function renderLb(elId, board, label) {
+  const el = document.getElementById(elId);
+  if (!board || board.length === 0) {
+    el.innerHTML = '<tr><td colspan="3" class="empty-state">暂无数据</td></tr>';
+    return;
+  }
+  el.innerHTML = board.map((e, i) => {
+    const medal = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : (i + 1);
+    return `<tr><td>${medal}</td><td style="font-weight:600;">${escHtml(e.name)}</td><td>${e.value}</td></tr>`;
+  }).join("");
+}
+
+// ---- Actions ----
+const BALL_SKINS = ["default","red","green","gold","purple","rainbow"];
+const BG_SKINS = ["default","sunset","ocean","starry","sakura"];
+
+let editingUser = null;
+let userCache = {};
+
+function editUser(name) {
+  const u = userCache[name];
+  if (!u) return;
+  editingUser = name;
+  document.getElementById("editName").value = name;
+  document.getElementById("editPassword").value = "";
+  document.getElementById("editCoins").value = u.coins || 0;
+  document.getElementById("editEmail").value = u.email || "";
+  // Populate skin dropdowns
+  const ballSel = document.getElementById("editBallSkin");
+  const bgSel = document.getElementById("editBgSkin");
+  ballSel.innerHTML = BALL_SKINS.map(s => `<option value="${s}" ${s===(u.ball_skin||'default')?'selected':''}>${s}</option>`).join("");
+  bgSel.innerHTML = BG_SKINS.map(s => `<option value="${s}" ${s===(u.bg_skin||'default')?'selected':''}>${s}</option>`).join("");
+  document.getElementById("editOwnedBall").value = (u.owned_ball_skins||["default"]).join(",");
+  document.getElementById("editOwnedBg").value = (u.owned_bg_skins||["default"]).join(",");
+  document.getElementById("editModalOverlay").classList.add("show");
+}
+
+document.getElementById("editCancel").onclick = () => {
+  document.getElementById("editModalOverlay").classList.remove("show");
+  editingUser = null;
+};
+
+document.getElementById("editSave").onclick = () => {
+  if (!editingUser) return;
+  const newName = document.getElementById("editName").value.trim();
+  const newPwd = document.getElementById("editPassword").value.trim();
+  const newCoins = document.getElementById("editCoins").value;
+  const newEmail = document.getElementById("editEmail").value.trim();
+  const newBallSkin = document.getElementById("editBallSkin").value;
+  const newBgSkin = document.getElementById("editBgSkin").value;
+  const newOwnedBall = document.getElementById("editOwnedBall").value.split(",").map(s=>s.trim()).filter(Boolean);
+  const newOwnedBg = document.getElementById("editOwnedBg").value.split(",").map(s=>s.trim()).filter(Boolean);
+
+  // Step 1: rename if needed
+  const doUpdate = () => {
+    const updates = {};
+    if (newPwd) updates.password = newPwd;
+    updates.coins = parseInt(newCoins) || 0;
+    updates.email = newEmail;
+    updates.ball_skin = newBallSkin;
+    updates.bg_skin = newBgSkin;
+    updates.owned_ball_skins = newOwnedBall.length ? newOwnedBall : ["default"];
+    updates.owned_bg_skins = newOwnedBg.length ? newOwnedBg : ["default"];
+    adminFetch("/api/admin/update_user", {
+      method: "POST",
+      body: JSON.stringify({ name: editingUser, updates })
+    }).then(data => {
+      if (data.ok) {
+        toast(data.message);
+        document.getElementById("editModalOverlay").classList.remove("show");
+        editingUser = null;
+        loadStats(); loadUsers(); loadLeaderboards();
+      } else {
+        toast(data.error || "操作失败", true);
+      }
+    });
+  };
+
+  if (newName && newName !== editingUser) {
+    adminFetch("/api/admin/rename_user", {
+      method: "POST",
+      body: JSON.stringify({ old_name: editingUser, new_name: newName })
+    }).then(data => {
+      if (data.ok) {
+        editingUser = newName;
+        doUpdate();
+      } else {
+        toast(data.error || "改名失败", true);
+      }
+    });
+  } else {
+    doUpdate();
+  }
+};
+
+function deleteUser(name) {
+  showModal("删除用户", `确定要删除用户「${name}」吗？此操作不可撤销，该用户的排行榜数据也会一并删除。`, () => {
+    adminFetch("/api/admin/delete_user", { method: "POST", body: JSON.stringify({ name }) })
+      .then(data => {
+        if (data.ok) { toast(data.message); loadStats(); loadUsers(); loadLeaderboards(); }
+        else toast(data.error || "操作失败", true);
+      });
+  });
+}
+
+function resetSave(name) {
+  showModal("清除存档", `确定要清除用户「${name}」的游戏存档吗？`, () => {
+    adminFetch("/api/admin/reset_user_save", { method: "POST", body: JSON.stringify({ name }) })
+      .then(data => {
+        if (data.ok) { toast(data.message); loadUsers(); }
+        else toast(data.error || "操作失败", true);
+      });
+  });
+}
+
+function setCoins(name) {
+  showModal("修改金币", `设置用户「${name}」的金币数量：`, () => {
+    const val = parseInt(document.getElementById("modalInput").value);
+    if (isNaN(val) || val < 0) { toast("请输入有效金币数", true); return; }
+    adminFetch("/api/admin/set_coins", { method: "POST", body: JSON.stringify({ name, coins: val }) })
+      .then(data => {
+        if (data.ok) { toast(data.message); loadStats(); loadUsers(); }
+        else toast(data.error || "操作失败", true);
+      });
+  }, true, { type: "number", placeholder: "输入金币数量" });
+}
+
+function clearLeaderboard(type) {
+  const names = { level: "关卡榜", coins: "金币榜", score: "分数榜" };
+  showModal("清空排行榜", `确定要清空「${names[type]}」的所有数据吗？此操作不可撤销。`, () => {
+    adminFetch("/api/admin/clear_leaderboard", { method: "POST", body: JSON.stringify({ type }) })
+      .then(data => {
+        if (data.ok) { toast(data.message); loadStats(); loadLeaderboards(); }
+        else toast(data.error || "操作失败", true);
+      });
+  });
+}
+
+// ===================== Announcement =====================
+function loadAnnouncementAdmin() {
+  adminFetch("/api/admin/announcement")
+    .then(data => {
+      document.getElementById("annTitle").value = data.title || "";
+      document.getElementById("annText").value = data.text || "";
+      document.getElementById("annContact").value = data.contact || "";
+      document.getElementById("annEnabled").checked = data.enabled !== false;
+    })
+    .catch(() => {});
+}
+document.getElementById("annSaveBtn").onclick = () => {
+  const payload = {
+    title: document.getElementById("annTitle").value.trim(),
+    text: document.getElementById("annText").value.trim(),
+    contact: document.getElementById("annContact").value.trim(),
+    enabled: document.getElementById("annEnabled").checked,
+  };
+  adminFetch("/api/admin/announcement", { method: "POST", body: JSON.stringify(payload) })
+    .then(data => {
+      if (data.ok) toast(data.message);
+      else toast(data.error || "保存失败", true);
+    })
+    .catch(() => {});
+};
+document.getElementById("annResetBtn").onclick = () => {
+  document.getElementById("annTitle").value = "欢迎来到滚动的小球";
+  document.getElementById("annText").value = "如有疑问请联系服主！";
+  document.getElementById("annContact").value = "QQ：2917149421";
+  document.getElementById("annEnabled").checked = true;
+};
+
+// ===================== Ban Management =====================
+const BAN_LABELS = { account: "账号", ip: "IP", uid: "机器" };
+function renderBanList(elId, items, type) {
+  const el = document.getElementById(elId);
+  if (!items || items.length === 0) {
+    el.innerHTML = '<div style="color:#64748b;font-size:13px;padding:6px 0;">暂无封禁记录</div>';
+    return;
+  }
+  el.innerHTML = items.map(v => {
+    const val = (v && typeof v === "object") ? v.value : v;
+    const reason = (v && typeof v === "object") ? (v.reason || "") : "";
+    const expires = (v && typeof v === "object") ? v.expires : null;
+    let expTxt;
+    if (expires) {
+      const left = expires - Math.floor(Date.now() / 1000);
+      const fmt = new Date(expires * 1000).toLocaleString("zh-CN", { hour12: false });
+      expTxt = `<div style="color:#94a3b8;font-size:12px;margin-top:4px;">解封时间：${fmt}${left > 0 ? "（剩 " + humanDur(left) + "）" : "（已过期）"}</div>`;
+    } else {
+      expTxt = `<div style="color:#f87171;font-size:12px;margin-top:4px;">永久封禁</div>`;
+    }
+    return `
+    <div style="padding:8px 12px;background:#0f172a;border:1px solid #334155;border-radius:8px;margin-bottom:8px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+        <span style="font-family:monospace;font-size:13px;color:#e2e8f0;word-break:break-all;">${escHtml(val)}</span>
+        <button class="action-btn btn-warning" onclick="unbanItem('${type}','${escAttr(val)}')">解封</button>
+      </div>
+      ${reason
+        ? `<div style="color:#fbbf24;font-size:12px;margin-top:4px;">封禁原因：${escHtml(reason)}</div>`
+        : `<div style="color:#475569;font-size:12px;margin-top:4px;">（未填写原因）</div>`}
+      ${expTxt}
+    </div>`;
+  }).join("");
+}
+function humanDur(sec) {
+  if (sec < 60) return sec + "秒";
+  if (sec < 3600) return Math.floor(sec / 60) + "分钟";
+  if (sec < 86400) return Math.floor(sec / 3600) + "小时";
+  return Math.floor(sec / 86400) + "天";
+}
+function loadBans() {
+  adminFetch("/api/admin/bans")
+    .then(data => {
+      renderBanList("banAccountList", data.accounts, "account");
+      renderBanList("banIpList", data.ips, "ip");
+      renderBanList("banUidList", data.uids, "uid");
+    })
+    .catch(() => {});
+}
+function banItem(type) {
+  const inputId = { account: "banAccountInput", ip: "banIpInput", uid: "banUidInput" }[type];
+  const reasonId = { account: "banAccountReason", ip: "banIpReason", uid: "banUidReason" }[type];
+  const durId = { account: "banAccountDuration", ip: "banIpDuration", uid: "banUidDuration" }[type];
+  const value = document.getElementById(inputId).value.trim();
+  const reason = document.getElementById(reasonId).value.trim();
+  const duration = document.getElementById(durId).value;
+  if (!value) { toast("请输入要封禁的对象", true); return; }
+  adminFetch("/api/admin/ban", { method: "POST", body: JSON.stringify({ type, value, reason, duration }) })
+    .then(data => {
+      if (data.ok) {
+        toast(data.message);
+        document.getElementById(inputId).value = "";
+        document.getElementById(reasonId).value = "";
+        document.getElementById(durId).value = "0";
+        loadBans();
+      } else {
+        toast(data.error || "封禁失败", true);
+      }
+    })
+    .catch(() => {});
+}
+function unbanItem(type, value) {
+  adminFetch("/api/admin/unban", { method: "POST", body: JSON.stringify({ type, value }) })
+    .then(data => {
+      toast(data.message || "已解封");
+      loadBans();
+    })
+    .catch(() => {});
+}
+function quickBan(type, value) {
+  const label = BAN_LABELS[type] || "";
+  showModal("封禁" + label, `确定要封禁${label}「${value}」吗？可填写封禁原因（可选）。`, () => {
+    const reason = (document.getElementById("modalInput").value || "").trim();
+    adminFetch("/api/admin/ban", { method: "POST", body: JSON.stringify({ type, value, reason }) })
+      .then(data => {
+        if (data.ok) { toast(data.message); loadBans(); }
+        else toast(data.error || "封禁失败", true);
+      });
+  }, true, { type: "text", placeholder: "封禁原因（可选）" });
+}
+
+// ===================== User Detail (inscriptions + drop rate) =====================
+const INS_NAMES = {
+  huisheng: "回生卷轴", gale: "疾风铭文", flame: "烈焰铭文", frost: "寒冰铭文",
+  guard: "守护铭文", gold: "黄金铭文", wisdom: "智慧铭文", luck: "幸运铭文"
+};
+let detailCurrentUser = null;
+
+function viewUserDetail(name) {
+  adminFetch("/api/admin/user/" + encodeURIComponent(name))
+    .then(data => {
+      if (!data.ok) { toast(data.error || "获取失败", true); return; }
+      const u = data.user;
+      detailCurrentUser = name;
+      document.getElementById("detailUserName").textContent = name;
+      document.getElementById("detailInsCount").textContent = u.inscription_count || 0;
+      const dr = (u.drop_rate != null) ? u.drop_rate : 1.0;
+      const equippedTxt = (u.equipped || []).map(e => (INS_NAMES[e.id] || e.id) + " Lv." + (e.level || 1)).join("、") || "无";
+      document.getElementById("detailBasic").innerHTML = `
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;font-size:13px;">
+          <div>UID：<span style="font-family:monospace;color:#94a3b8;">${escHtml(u.uid || "-")}</span></div>
+          <div>金币：<span style="color:#fbbf24;">${u.coins || 0}</span></div>
+          <div>分数：<span style="color:#60a5fa;">${u.total_score || 0}</span></div>
+          <div>最高关：<span>${u.max_level || 1}</span></div>
+          <div>邮箱：<span>${escHtml(u.email || "未绑定")}</span></div>
+          <div>最后上线：<span style="font-family:monospace;color:#94a3b8;">${fmtTime(u.last_online)}</span></div>
+          <div>IP：<span style="font-family:monospace;color:#94a3b8;">${escHtml(u.last_ip || u.reg_ip || "-")}</span></div>
+          <div style="grid-column:1/3;">装备铭文：<span>${equippedTxt}</span></div>
+          <div style="grid-column:1/3;">当前爆率：<span style="color:#34d399;">${dr}</span></div>
+        </div>`;
+      const insSummary = u.inscription_summary || [];
+      if (insSummary.length === 0) {
+        document.getElementById("detailInsList").innerHTML = '<div style="color:#64748b;">该用户暂无铭文</div>';
+      } else {
+        document.getElementById("detailInsList").innerHTML = insSummary.map(s =>
+          `<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #1e293b;">
+            <span><b style="color:#e2e8f0;">${escHtml(INS_NAMES[s.id] || s.id)}</b> <span style="color:#94a3b8;">Lv.${s.level}</span></span>
+            <span style="color:#64748b;">×${s.count}</span>
+          </div>`).join("");
+      }
+      document.getElementById("detailDropRate").value = dr;
+      document.getElementById("userDetailModal").classList.add("show");
+    })
+    .catch(() => {});
+}
+
+document.getElementById("detailClose").onclick = () => {
+  document.getElementById("userDetailModal").classList.remove("show");
+  detailCurrentUser = null;
+};
+
+document.getElementById("detailSetDropRate").onclick = () => {
+  if (!detailCurrentUser) return;
+  const rate = parseFloat(document.getElementById("detailDropRate").value);
+  if (isNaN(rate) || rate < 0 || rate > 100) { toast("爆率需在 0~100 之间", true); return; }
+  adminFetch("/api/admin/set_drop_rate", {
+    method: "POST",
+    body: JSON.stringify({ name: detailCurrentUser, rate })
+  }).then(data => {
+    if (data.ok) {
+      toast(data.message);
+      viewUserDetail(detailCurrentUser);  // 刷新数据
+      loadUsers();
+    } else {
+      toast(data.error || "设置失败", true);
+    }
+  });
+};
+
+// ---- Modal ----
+let modalCallback = null;
+function showModal(title, text, callback, showInput = false, inputConfig = null) {
+  document.getElementById("modalTitle").textContent = title;
+  document.getElementById("modalText").textContent = text;
+  const inp = document.getElementById("modalInput");
+  const wrap = document.getElementById("modalInputWrap");
+  wrap.style.display = showInput ? "block" : "none";
+  if (showInput) {
+    inp.type = (inputConfig && inputConfig.type) || "text";
+    inp.placeholder = (inputConfig && inputConfig.placeholder) || "";
+  }
+  inp.value = "";
+  document.getElementById("modalOverlay").classList.add("show");
+  modalCallback = callback;
+}
+document.getElementById("modalCancel").onclick = () => {
+  document.getElementById("modalOverlay").classList.remove("show");
+  modalCallback = null;
+};
+document.getElementById("modalConfirm").onclick = () => {
+  document.getElementById("modalOverlay").classList.remove("show");
+  if (modalCallback) modalCallback();
+  modalCallback = null;
+};
+
+// ---- Toast ----
+let toastTimer = null;
+function toast(msg, isError = false) {
+  const el = document.getElementById("toast");
+  el.textContent = msg;
+  el.className = isError ? "error show" : "show";
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { el.className = ""; }, 2500);
+}
+
+// ---- Tabs ----
+document.querySelectorAll(".tab-btn").forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    document.querySelectorAll(".tab-content").forEach(c => c.style.display = "none");
+    document.getElementById("tab-" + btn.dataset.tab).style.display = "block";
+  };
+});
+
+// ---- Escapers ----
+function escHtml(s) {
+  if (!s) return "";
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+function fmtTime(ts) {
+  if (!ts) return "从未上线";
+  const d = new Date(ts * 1000);
+  const pad = n => String(n).padStart(2, "0");
+  return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()) + " " +
+         pad(d.getHours()) + ":" + pad(d.getMinutes()) + ":" + pad(d.getSeconds());
+}
+function escAttr(s) {
+  if (!s) return "";
+  return String(s).replace(/'/g,"\\'");
+}
+
+// ---- Init ----
+document.getElementById("loginBtn").onclick = doLogin;
+document.getElementById("logoutBtn").onclick = logout;
+document.getElementById("adminPass").addEventListener("keydown", e => { if (e.key === "Enter") doLogin(); });
+
+// Auto-login if session exists
+if (getAuthHeader()) {
+  fetch("/api/admin/check", { headers: { "Authorization": getAuthHeader() } })
+    .then(r => r.json())
+    .then(data => { if (data.ok) showDashboard(); })
+    .catch(() => {});
+}
+</script>
+</body>
+</html>

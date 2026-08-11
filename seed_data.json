@@ -1,0 +1,2257 @@
+{
+  "users": {
+    "哦哦哦了": {
+      "coins": 288,
+      "owned_ball_skins": [
+        "default"
+      ],
+      "owned_bg_skins": [
+        "default"
+      ],
+      "ball_skin": "default",
+      "bg_skin": "default",
+      "save": {
+        "level": 2,
+        "score": 1921,
+        "coins": 3,
+        "totalDistance": 3542.070600000035,
+        "timestamp": 1784288254010
+      },
+      "uid": "u5be8bf34c48",
+      "max_level": 2,
+      "inscriptions": [],
+      "equipped": [],
+      "drop_rate": 1.0,
+      "password": "$pbkdf2$100000$g9o6EzE9uRBhD6J8nBa+LA==$paDHClQ6DtQKfjYIAd85Xh6uxe+Kc/MpKRLSTOG271g=",
+      "last_ip": "127.0.0.1",
+      "coin_log": [
+        {
+          "t": 1784964150,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1784964151,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1784964181,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1784964182,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1784964484,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1784964484,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1784964997,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1784964997,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1784965181,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1784965182,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1784966807,
+          "delta": 0,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1784966848,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1784966848,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1784993474,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1784993474,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1784994089,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1784994089,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1785055258,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1785055258,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1785160619,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1785160619,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1785212684,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1785212684,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1785225040,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1785225040,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1785291861,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1785291862,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1785292179,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1785292179,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1785320599,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1785320599,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1785321020,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1785321021,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1785321572,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1785321572,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1785321858,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1785321858,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1785487684,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1785487684,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1785488018,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1785488018,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1785488198,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1785488199,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1785489583,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1785489583,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1785568376,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1785568376,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1786336432,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1786336433,
+          "delta": -6000,
+          "reason": "管理员设置",
+          "balance": 288
+        },
+        {
+          "t": 1786336969,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 6288
+        },
+        {
+          "t": 1786337045,
+          "delta": 6000,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 12288
+        },
+        {
+          "t": 1786337045,
+          "delta": -12000,
+          "reason": "管理员设置",
+          "balance": 288
+        }
+      ],
+      "total_score": 1921,
+      "last_online": 1786337045
+    },
+    "ABC": {
+      "coins": 902,
+      "owned_ball_skins": [
+        "default",
+        "rainbow"
+      ],
+      "owned_bg_skins": [
+        "default",
+        "sunset"
+      ],
+      "ball_skin": "rainbow",
+      "bg_skin": "sunset",
+      "save": {
+        "level": 6,
+        "score": 10451,
+        "coins": 67,
+        "totalDistance": 14202.746557557888,
+        "timestamp": 1785406917296
+      },
+      "uid": "ue1cc19cc2f0",
+      "password": "$pbkdf2$100000$vR1Nt/ATS5qn3dowy5KUUg==$LUjnTzNmVgGgFEQW+VoAmndAxXfPAJKc3ciLXjoOzIY=",
+      "email": "",
+      "title": "pro",
+      "owned_titles": [
+        "none",
+        "newbie",
+        "pro"
+      ],
+      "chat_color": "#e2e8f0",
+      "max_level": 10,
+      "last_ip": "115.53.108.109",
+      "total_score": 1128146,
+      "inscriptions": [
+        {
+          "id": "gale",
+          "level": 4
+        },
+        {
+          "id": "frost",
+          "level": 3
+        },
+        {
+          "id": "gold",
+          "level": 3
+        },
+        {
+          "id": "huisheng",
+          "level": 3
+        },
+        {
+          "id": "gale",
+          "level": 3
+        },
+        {
+          "id": "guard",
+          "level": 4
+        },
+        {
+          "id": "guard",
+          "level": 1
+        },
+        {
+          "id": "gale",
+          "level": 2
+        },
+        {
+          "id": "flame",
+          "level": 2
+        },
+        {
+          "id": "flame",
+          "level": 4
+        },
+        {
+          "id": "huisheng",
+          "level": 2
+        },
+        {
+          "id": "gold",
+          "level": 2
+        },
+        {
+          "id": "wisdom",
+          "level": 3
+        },
+        {
+          "id": "luck",
+          "level": 4
+        },
+        {
+          "id": "guard",
+          "level": 1
+        },
+        {
+          "id": "gold",
+          "level": 1
+        },
+        {
+          "id": "guard",
+          "level": 1
+        },
+        {
+          "id": "huisheng",
+          "level": 1
+        },
+        {
+          "id": "guard",
+          "level": 1
+        },
+        {
+          "id": "frost",
+          "level": 1
+        },
+        {
+          "id": "wisdom",
+          "level": 2
+        },
+        {
+          "id": "luck",
+          "level": 2
+        }
+      ],
+      "equipped": [
+        {
+          "id": "huisheng",
+          "level": 3
+        },
+        {
+          "id": "gold",
+          "level": 3
+        }
+      ],
+      "coin_log": [
+        {
+          "t": 1784884071,
+          "delta": 136,
+          "reason": "游戏结算·关卡10",
+          "balance": 2519
+        },
+        {
+          "t": 1784884176,
+          "delta": 147,
+          "reason": "游戏结算·关卡10",
+          "balance": 2666
+        },
+        {
+          "t": 1784884190,
+          "delta": -1000,
+          "reason": "抽奖(十连)",
+          "balance": 1666
+        },
+        {
+          "t": 1784884190,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 1686
+        },
+        {
+          "t": 1784884190,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 1706
+        },
+        {
+          "t": 1784884190,
+          "delta": 50,
+          "reason": "抽奖奖励·金币+50",
+          "balance": 1756
+        },
+        {
+          "t": 1784884190,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 1776
+        },
+        {
+          "t": 1784884190,
+          "delta": 50,
+          "reason": "抽奖奖励·金币+50",
+          "balance": 1826
+        },
+        {
+          "t": 1784884198,
+          "delta": -1000,
+          "reason": "抽奖(十连)",
+          "balance": 826
+        },
+        {
+          "t": 1784884198,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 846
+        },
+        {
+          "t": 1784884198,
+          "delta": 50,
+          "reason": "抽奖奖励·金币+50",
+          "balance": 896
+        },
+        {
+          "t": 1784885976,
+          "delta": 130,
+          "reason": "游戏结算·关卡10",
+          "balance": 1026
+        },
+        {
+          "t": 1784885994,
+          "delta": -1000,
+          "reason": "抽奖(十连)",
+          "balance": 26
+        },
+        {
+          "t": 1784885994,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 46
+        },
+        {
+          "t": 1784885994,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 66
+        },
+        {
+          "t": 1784948633,
+          "delta": 108,
+          "reason": "游戏结算·关卡10",
+          "balance": 174
+        },
+        {
+          "t": 1784948711,
+          "delta": 45,
+          "reason": "游戏结算·关卡10",
+          "balance": 219
+        },
+        {
+          "t": 1784948790,
+          "delta": 100,
+          "reason": "游戏结算·关卡10",
+          "balance": 319
+        },
+        {
+          "t": 1784948874,
+          "delta": 77,
+          "reason": "游戏结算·关卡10",
+          "balance": 396
+        },
+        {
+          "t": 1785406774,
+          "delta": 222,
+          "reason": "游戏结算·关卡10（含铭文加成）",
+          "balance": 618
+        },
+        {
+          "t": 1785406846,
+          "delta": 150,
+          "reason": "游戏结算·关卡10（含铭文加成）",
+          "balance": 768
+        },
+        {
+          "t": 1785406919,
+          "delta": 134,
+          "reason": "游戏结算·关卡10（含铭文加成）",
+          "balance": 902
+        }
+      ],
+      "last_online": 1785406919
+    },
+    "凑晚清": {
+      "password": "$pbkdf2$100000$evvoClK12ovZ/6245Mvwjg==$5fdncIVcwspeVYTxkS6RDR/oHojIDVv9O5/wAKDHn+0=",
+      "email": "",
+      "coins": 57,
+      "owned_ball_skins": [
+        "default"
+      ],
+      "owned_bg_skins": [
+        "default"
+      ],
+      "ball_skin": "default",
+      "bg_skin": "default",
+      "save": {
+        "level": 4,
+        "score": 6613,
+        "coins": 40,
+        "totalDistance": 9227.660120001872,
+        "timestamp": 1784292993897
+      },
+      "uid": "uc34ffa7ab6a",
+      "max_level": 4,
+      "inscriptions": [],
+      "equipped": []
+    },
+    "晚晴_服主": {
+      "password": "$pbkdf2$100000$1VLK6pbucSn1gRsFva/BFA==$bJkBFkN7qICcfPg37ErwIezrePVmwhLC+KcBZk7+Be8=",
+      "email": "2917149421@qq.com",
+      "coins": 2282,
+      "ball_skin": "rainbow",
+      "bg_skin": "sunset",
+      "save": {
+        "level": 7,
+        "score": 16455,
+        "coins": 106,
+        "totalDistance": 22310.826656616315,
+        "timestamp": 1785571217816
+      },
+      "owned_ball_skins": [
+        "default",
+        "flame",
+        "forest",
+        "gold",
+        "purple",
+        "rainbow"
+      ],
+      "owned_bg_skins": [
+        "default",
+        "night",
+        "ocean",
+        "sakura",
+        "sunset"
+      ],
+      "title": "owner",
+      "owned_titles": [
+        "newbie",
+        "none",
+        "owner"
+      ],
+      "chat_color": "#3b82f6",
+      "uid": "u5f796efb09f",
+      "max_level": 12,
+      "last_ip": "127.0.0.1",
+      "total_score": 299782,
+      "inscriptions": [
+        {
+          "id": "guard",
+          "level": 4
+        },
+        {
+          "id": "gold",
+          "level": 4
+        },
+        {
+          "id": "flame",
+          "level": 4
+        },
+        {
+          "id": "wisdom",
+          "level": 1
+        },
+        {
+          "id": "guard",
+          "level": 1
+        },
+        {
+          "id": "huisheng",
+          "level": 4
+        },
+        {
+          "id": "wisdom",
+          "level": 4
+        },
+        {
+          "id": "luck",
+          "level": 4
+        },
+        {
+          "id": "guard",
+          "level": 2
+        },
+        {
+          "id": "flame",
+          "level": 3
+        },
+        {
+          "id": "frost",
+          "level": 4
+        },
+        {
+          "id": "gale",
+          "level": 4
+        },
+        {
+          "id": "guard",
+          "level": 1
+        },
+        {
+          "id": "guard",
+          "level": 1
+        },
+        {
+          "id": "wisdom",
+          "level": 1
+        },
+        {
+          "id": "wisdom",
+          "level": 1
+        },
+        {
+          "id": "wisdom",
+          "level": 1
+        },
+        {
+          "id": "wisdom",
+          "level": 1
+        },
+        {
+          "id": "luck",
+          "level": 1
+        },
+        {
+          "id": "guard",
+          "level": 1
+        },
+        {
+          "id": "luck",
+          "level": 1
+        },
+        {
+          "id": "guard",
+          "level": 1
+        },
+        {
+          "id": "wisdom",
+          "level": 1
+        },
+        {
+          "id": "huisheng",
+          "level": 1
+        },
+        {
+          "id": "luck",
+          "level": 1
+        },
+        {
+          "id": "guard",
+          "level": 1
+        },
+        {
+          "id": "flame",
+          "level": 2
+        },
+        {
+          "id": "frost",
+          "level": 2
+        },
+        {
+          "id": "frost",
+          "level": 3
+        },
+        {
+          "id": "huisheng",
+          "level": 3
+        },
+        {
+          "id": "gold",
+          "level": 2
+        },
+        {
+          "id": "luck",
+          "level": 1
+        },
+        {
+          "id": "wisdom",
+          "level": 1
+        },
+        {
+          "id": "luck",
+          "level": 1
+        },
+        {
+          "id": "wisdom",
+          "level": 1
+        },
+        {
+          "id": "gale",
+          "level": 2
+        },
+        {
+          "id": "gold",
+          "level": 4
+        },
+        {
+          "id": "guard",
+          "level": 1
+        },
+        {
+          "id": "gold",
+          "level": 1
+        },
+        {
+          "id": "flame",
+          "level": 1
+        },
+        {
+          "id": "luck",
+          "level": 1
+        }
+      ],
+      "equipped": [
+        {
+          "id": "huisheng",
+          "level": 4
+        },
+        {
+          "id": "gold",
+          "level": 4
+        }
+      ],
+      "coin_log": [
+        {
+          "t": 1784882317,
+          "delta": 6132,
+          "reason": "历史余额",
+          "balance": 6132
+        },
+        {
+          "t": 1784960223,
+          "delta": 224,
+          "reason": "游戏结算·关卡12",
+          "balance": 6356
+        },
+        {
+          "t": 1784960361,
+          "delta": 644,
+          "reason": "管理员设置",
+          "balance": 7000
+        },
+        {
+          "t": 1784960492,
+          "delta": 856,
+          "reason": "管理员设置",
+          "balance": 7856
+        },
+        {
+          "t": 1784966385,
+          "delta": 44,
+          "reason": "游戏结算·关卡12（含铭文加成）",
+          "balance": 7900
+        },
+        {
+          "t": 1785488713,
+          "delta": -1000,
+          "reason": "抽奖(十连)",
+          "balance": 6900
+        },
+        {
+          "t": 1785488713,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 6920
+        },
+        {
+          "t": 1785488713,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 6940
+        },
+        {
+          "t": 1785488713,
+          "delta": 50,
+          "reason": "抽奖奖励·金币+50",
+          "balance": 6990
+        },
+        {
+          "t": 1785488713,
+          "delta": 50,
+          "reason": "抽奖奖励·金币+50",
+          "balance": 7040
+        },
+        {
+          "t": 1785571217,
+          "delta": 212,
+          "reason": "游戏结算·关卡12（含铭文加成）",
+          "balance": 7252
+        },
+        {
+          "t": 1785571228,
+          "delta": -1000,
+          "reason": "抽奖(十连)",
+          "balance": 6252
+        },
+        {
+          "t": 1785571228,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 6272
+        },
+        {
+          "t": 1785571228,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 6292
+        },
+        {
+          "t": 1785571228,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 6312
+        },
+        {
+          "t": 1785571228,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 6332
+        },
+        {
+          "t": 1785571228,
+          "delta": 50,
+          "reason": "抽奖奖励·金币+50",
+          "balance": 6382
+        },
+        {
+          "t": 1785571228,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 6402
+        },
+        {
+          "t": 1785571228,
+          "delta": 50,
+          "reason": "抽奖奖励·金币+50",
+          "balance": 6452
+        },
+        {
+          "t": 1785571234,
+          "delta": -1000,
+          "reason": "抽奖(十连)",
+          "balance": 5452
+        },
+        {
+          "t": 1785571234,
+          "delta": 50,
+          "reason": "抽奖奖励·金币+50",
+          "balance": 5502
+        },
+        {
+          "t": 1785571234,
+          "delta": 50,
+          "reason": "抽奖奖励·金币+50",
+          "balance": 5552
+        },
+        {
+          "t": 1785571234,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 5572
+        },
+        {
+          "t": 1785571234,
+          "delta": 50,
+          "reason": "抽奖奖励·金币+50",
+          "balance": 5622
+        },
+        {
+          "t": 1785586737,
+          "delta": -1000,
+          "reason": "抽奖(十连)",
+          "balance": 4622
+        },
+        {
+          "t": 1785586737,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 4642
+        },
+        {
+          "t": 1785586737,
+          "delta": 50,
+          "reason": "抽奖奖励·金币+50",
+          "balance": 4692
+        },
+        {
+          "t": 1785586737,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 4712
+        },
+        {
+          "t": 1785586737,
+          "delta": 50,
+          "reason": "抽奖奖励·金币+50",
+          "balance": 4762
+        },
+        {
+          "t": 1785586737,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 4782
+        },
+        {
+          "t": 1785586737,
+          "delta": 50,
+          "reason": "抽奖奖励·金币+50",
+          "balance": 4832
+        },
+        {
+          "t": 1785588023,
+          "delta": -1000,
+          "reason": "抽奖(十连)",
+          "balance": 3832
+        },
+        {
+          "t": 1785588023,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 3852
+        },
+        {
+          "t": 1785588023,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 3872
+        },
+        {
+          "t": 1785588023,
+          "delta": 50,
+          "reason": "抽奖奖励·金币+50",
+          "balance": 3922
+        },
+        {
+          "t": 1785588023,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 3942
+        },
+        {
+          "t": 1786190110,
+          "delta": -1000,
+          "reason": "抽奖(十连)",
+          "balance": 2942
+        },
+        {
+          "t": 1786190110,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 2962
+        },
+        {
+          "t": 1786190110,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 2982
+        },
+        {
+          "t": 1786190110,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 3002
+        },
+        {
+          "t": 1786190110,
+          "delta": 50,
+          "reason": "抽奖奖励·金币+50",
+          "balance": 3052
+        },
+        {
+          "t": 1786190110,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 3072
+        },
+        {
+          "t": 1786335964,
+          "delta": -1000,
+          "reason": "抽奖(十连)",
+          "balance": 2072
+        },
+        {
+          "t": 1786335964,
+          "delta": 50,
+          "reason": "抽奖奖励·金币+50",
+          "balance": 2122
+        },
+        {
+          "t": 1786335964,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 2142
+        },
+        {
+          "t": 1786335964,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 2162
+        },
+        {
+          "t": 1786335964,
+          "delta": 50,
+          "reason": "抽奖奖励·金币+50",
+          "balance": 2212
+        },
+        {
+          "t": 1786335964,
+          "delta": 20,
+          "reason": "抽奖奖励·金币+20",
+          "balance": 2232
+        },
+        {
+          "t": 1786335964,
+          "delta": 50,
+          "reason": "抽奖奖励·金币+50",
+          "balance": 2282
+        }
+      ],
+      "last_online": 1786335909
+    },
+    "卡卡罗": {
+      "uid": "ue03ffd2b3a8",
+      "password": "$pbkdf2$100000$fO/mDYfNOn4I5fXg5UyNkw==$jixdNW848cffrJwR59oVKCK2BETO/zWfpUCjuIiqiD8=",
+      "email": "",
+      "coins": 34,
+      "owned_ball_skins": [
+        "default"
+      ],
+      "owned_bg_skins": [
+        "default"
+      ],
+      "ball_skin": "default",
+      "bg_skin": "default",
+      "save": {
+        "level": 3,
+        "score": 2601,
+        "coins": 9,
+        "totalDistance": 4302.508211664638,
+        "timestamp": 1784354650761
+      },
+      "title": "newbie",
+      "owned_titles": [
+        "none",
+        "newbie"
+      ],
+      "chat_color": "#e2e8f0",
+      "max_level": 3,
+      "inscriptions": [],
+      "equipped": []
+    },
+    "32767": {
+      "uid": "u82c9ffde47a",
+      "password": "$pbkdf2$100000$lCac9SSokirfbDtV+NbC6w==$B946oDpx/gUEudh5Gj+ItwYUt4l4yS6g9lbM4RD2MKI=",
+      "email": "",
+      "coins": 26,
+      "owned_ball_skins": [
+        "default"
+      ],
+      "owned_bg_skins": [
+        "default"
+      ],
+      "ball_skin": "default",
+      "bg_skin": "default",
+      "save": {
+        "level": 1,
+        "score": 456,
+        "coins": 2,
+        "totalDistance": 713.222400000003,
+        "timestamp": 1784354706834
+      },
+      "title": "newbie",
+      "owned_titles": [
+        "none",
+        "newbie"
+      ],
+      "chat_color": "#e2e8f0",
+      "max_level": 1,
+      "inscriptions": [],
+      "equipped": []
+    },
+    "dzyyy": {
+      "uid": "ud26670e39e8",
+      "password": "$pbkdf2$100000$eXIII0R+uv7lTX/sQmL5sA==$CdcRhuqMwlaSPQgZ1di4dKnQfdB+kTdjAXdy1UQPmuE=",
+      "email": "",
+      "coins": 0,
+      "owned_ball_skins": [
+        "default"
+      ],
+      "owned_bg_skins": [
+        "default"
+      ],
+      "ball_skin": "default",
+      "bg_skin": "default",
+      "save": {
+        "level": 1,
+        "score": 495,
+        "coins": 0,
+        "totalDistance": 990.5280000000016,
+        "timestamp": 1784355135420
+      },
+      "title": "newbie",
+      "owned_titles": [
+        "none",
+        "newbie"
+      ],
+      "chat_color": "#e2e8f0",
+      "max_level": 1,
+      "inscriptions": [],
+      "equipped": []
+    },
+    "黑色条纹": {
+      "uid": "u3ab6e3ee3d3",
+      "password": "$pbkdf2$100000$1xiEjLwzTOBkWM0DplTcug==$Iyh8usu2tqDnQ/rwTaOETnN0LyKistMKkAU1ggG9+4Y=",
+      "email": "",
+      "coins": 88,
+      "owned_ball_skins": [
+        "default",
+        "rainbow"
+      ],
+      "owned_bg_skins": [
+        "default"
+      ],
+      "ball_skin": "rainbow",
+      "bg_skin": "default",
+      "save": {
+        "level": 2,
+        "score": 2235,
+        "coins": 12,
+        "totalDistance": 3271.0251000000394,
+        "timestamp": 1784614295043
+      },
+      "title": "newbie",
+      "owned_titles": [
+        "none",
+        "newbie"
+      ],
+      "chat_color": "#e2e8f0",
+      "max_level": 6,
+      "inscriptions": [],
+      "equipped": []
+    },
+    "a": {
+      "uid": "u8e60f04cd37",
+      "password": "$pbkdf2$100000$s9jF3esMJXuXMqwtSl6ejw==$rP4hbQBkFzoZ1v0BxT8ZqYRK0PqDZP7t4Sqzy4Knqxg=",
+      "email": "",
+      "coins": 6,
+      "owned_ball_skins": [
+        "default"
+      ],
+      "owned_bg_skins": [
+        "default"
+      ],
+      "ball_skin": "default",
+      "bg_skin": "default",
+      "save": {
+        "level": 2,
+        "score": 1915,
+        "coins": 6,
+        "totalDistance": 3231.153437389624,
+        "timestamp": 1784359995445
+      },
+      "title": "newbie",
+      "owned_titles": [
+        "none",
+        "newbie"
+      ],
+      "chat_color": "#e2e8f0",
+      "max_level": 2,
+      "inscriptions": [],
+      "equipped": []
+    },
+    "疯狂的小李": {
+      "uid": "u8ed9f6908aa",
+      "password": "$pbkdf2$100000$DkjpKjefUz0/ZGj9821SLQ==$gRzfBQztP7x50P81LLDaa2jfPfxBL+7cn1VpJUekdkY=",
+      "email": "",
+      "coins": 124,
+      "owned_ball_skins": [
+        "default",
+        "purple",
+        "forest",
+        "flame",
+        "rainbow"
+      ],
+      "owned_bg_skins": [
+        "default",
+        "night",
+        "sunset",
+        "sakura"
+      ],
+      "ball_skin": "rainbow",
+      "bg_skin": "sakura",
+      "save": {
+        "level": 7,
+        "score": 12199,
+        "coins": 55,
+        "totalDistance": 18898.556817188673,
+        "timestamp": 1784730224252
+      },
+      "title": "pro",
+      "owned_titles": [
+        "none",
+        "newbie",
+        "pro"
+      ],
+      "chat_color": "#e2e8f0",
+      "max_level": 10,
+      "last_ip": "127.0.0.1",
+      "inscriptions": [
+        {
+          "id": "frost",
+          "level": 1
+        },
+        {
+          "id": "gale",
+          "level": 1
+        },
+        {
+          "id": "gale",
+          "level": 2
+        },
+        {
+          "id": "luck",
+          "level": 1
+        },
+        {
+          "id": "luck",
+          "level": 1
+        },
+        {
+          "id": "huisheng",
+          "level": 2
+        },
+        {
+          "id": "guard",
+          "level": 2
+        },
+        {
+          "id": "flame",
+          "level": 1
+        },
+        {
+          "id": "gold",
+          "level": 1
+        },
+        {
+          "id": "luck",
+          "level": 1
+        },
+        {
+          "id": "guard",
+          "level": 1
+        },
+        {
+          "id": "luck",
+          "level": 1
+        }
+      ],
+      "total_score": 259709,
+      "equipped": [
+        {
+          "id": "huisheng",
+          "level": 2
+        },
+        {
+          "id": "gale",
+          "level": 2
+        }
+      ]
+    },
+    "宵崎奏小美女": {
+      "uid": "u136609ec356",
+      "password": "$pbkdf2$100000$esUIyuKS1ta2z3/8nijTNQ==$/cBM+RH/r0XcZ6406XbeX4ahPiak9m+cFM+/i9qnQ58=",
+      "email": "",
+      "coins": 58,
+      "owned_ball_skins": [
+        "default"
+      ],
+      "owned_bg_skins": [
+        "default"
+      ],
+      "ball_skin": "default",
+      "bg_skin": "default",
+      "save": {
+        "level": 4,
+        "score": 6449,
+        "coins": 38,
+        "totalDistance": 9099.247200000225,
+        "timestamp": 1784383141612
+      },
+      "title": "newbie",
+      "owned_titles": [
+        "none",
+        "newbie"
+      ],
+      "chat_color": "#e2e8f0",
+      "max_level": 4,
+      "inscriptions": [],
+      "equipped": []
+    },
+    "疯狂的小李小号": {
+      "uid": "ua649f23f098",
+      "password": "$pbkdf2$100000$eYhagHwDvyeN9voqFBcSGg==$FclgHQhL36vNCzeYtp6r93HGGh7xPxRwK4gTPhAxRwg=",
+      "email": "",
+      "coins": 282,
+      "owned_ball_skins": [
+        "default"
+      ],
+      "owned_bg_skins": [
+        "default"
+      ],
+      "ball_skin": "default",
+      "bg_skin": "default",
+      "save": {
+        "level": 4,
+        "score": 4576,
+        "coins": 19,
+        "totalDistance": 7253.251670507977,
+        "timestamp": 1784384238391
+      },
+      "title": "pro",
+      "owned_titles": [
+        "none",
+        "newbie",
+        "pro"
+      ],
+      "chat_color": "#e2e8f0",
+      "max_level": 7,
+      "inscriptions": [],
+      "equipped": []
+    },
+    "dnju": {
+      "uid": "u7a743b22975",
+      "password": "$pbkdf2$100000$IPgxzSe0ZEJD44dXHlhLeg==$1d/YJ8utxInSr51HZ3mise+j5icaw2D9TckeDJF+ZCo=",
+      "email": "",
+      "coins": 85,
+      "owned_ball_skins": [
+        "default"
+      ],
+      "owned_bg_skins": [
+        "default"
+      ],
+      "ball_skin": "default",
+      "bg_skin": "default",
+      "save": {
+        "level": 5,
+        "score": 7980,
+        "coins": 52,
+        "totalDistance": 10760.699206363228,
+        "timestamp": 1784383787624
+      },
+      "title": "newbie",
+      "owned_titles": [
+        "none",
+        "newbie"
+      ],
+      "chat_color": "#e2e8f0",
+      "max_level": 5,
+      "inscriptions": [],
+      "equipped": []
+    },
+    "JASONO07793": {
+      "uid": "u05b70d3566d",
+      "password": "$pbkdf2$100000$/HZeUjDgjexT/OsEdPDm9w==$LvmRd+/q6iJ/OMIEUAk+QUvDFuFkDU4ae6RRj6OhtN0=",
+      "email": "",
+      "coins": 11,
+      "owned_ball_skins": [
+        "default"
+      ],
+      "owned_bg_skins": [
+        "default"
+      ],
+      "ball_skin": "default",
+      "bg_skin": "default",
+      "save": {
+        "level": 2,
+        "score": 1551,
+        "coins": 6,
+        "totalDistance": 2502.5201601045937,
+        "timestamp": 1784387639098
+      },
+      "title": "newbie",
+      "owned_titles": [
+        "none",
+        "newbie"
+      ],
+      "chat_color": "#e2e8f0",
+      "max_level": 2,
+      "inscriptions": [],
+      "equipped": []
+    },
+    "伊洛玛丽": {
+      "uid": "u5419fd3b6a1",
+      "password": "$pbkdf2$100000$gGAO3cESBLfOjNWpPqfJPg==$9d+ZlKXJS4W9S6DJ1A4vEEcMsb/INRh63DsE40by1xY=",
+      "email": "",
+      "coins": 14,
+      "owned_ball_skins": [
+        "default"
+      ],
+      "owned_bg_skins": [
+        "default"
+      ],
+      "ball_skin": "default",
+      "bg_skin": "default",
+      "save": {
+        "level": 1,
+        "score": 447,
+        "coins": 2,
+        "totalDistance": 695.3472000000011,
+        "timestamp": 1784388159795
+      },
+      "title": "newbie",
+      "owned_titles": [
+        "none",
+        "newbie"
+      ],
+      "chat_color": "#e2e8f0",
+      "max_level": 2,
+      "inscriptions": [],
+      "equipped": []
+    },
+    "1111": {
+      "uid": "u737619a57a2",
+      "password": "$pbkdf2$100000$tt0FRCI8nHKWaFns164s4Q==$iTHmNu6CtwtBgP5FKSIKA7HOGrHymi4P1prLENPfrrY=",
+      "email": "",
+      "coins": 10,
+      "owned_ball_skins": [
+        "default"
+      ],
+      "owned_bg_skins": [
+        "default"
+      ],
+      "ball_skin": "default",
+      "bg_skin": "default",
+      "save": {
+        "level": 2,
+        "score": 1866,
+        "coins": 10,
+        "totalDistance": 2733.990175724258,
+        "timestamp": 1784388174108
+      },
+      "title": "newbie",
+      "owned_titles": [
+        "none",
+        "newbie"
+      ],
+      "chat_color": "#e2e8f0",
+      "max_level": 2,
+      "inscriptions": [],
+      "equipped": []
+    },
+    "wsml": {
+      "uid": "u399b9d388c8",
+      "password": "$pbkdf2$100000$vLaEbgQ8GQOPgPZb4U0XXA==$FaXPYizAsr55SEObUkSIKD2oyAe0P+9yv7ITp6qgo2E=",
+      "email": "",
+      "coins": 0,
+      "owned_ball_skins": [
+        "default"
+      ],
+      "owned_bg_skins": [
+        "default"
+      ],
+      "ball_skin": "default",
+      "bg_skin": "default",
+      "save": {
+        "level": 1,
+        "score": 626,
+        "coins": 0,
+        "totalDistance": 1252.9297379733105,
+        "timestamp": 1784389169653
+      },
+      "title": "newbie",
+      "owned_titles": [
+        "none",
+        "newbie"
+      ],
+      "chat_color": "#e2e8f0",
+      "max_level": 1,
+      "inscriptions": [],
+      "equipped": []
+    },
+    "Nang0ng": {
+      "uid": "u2b1c91f08fb",
+      "password": "$pbkdf2$100000$neXsSQXXjyVIuFAFWUDI8Q==$9caR+h3HpJACZ+5XW+YPS/hvgLyzlZNqDFPL0IcgaFM=",
+      "email": "",
+      "coins": 68,
+      "owned_ball_skins": [
+        "default"
+      ],
+      "owned_bg_skins": [
+        "default"
+      ],
+      "ball_skin": "default",
+      "bg_skin": "default",
+      "save": {
+        "level": 4,
+        "score": 6133,
+        "coins": 33,
+        "totalDistance": 8967.720079734538,
+        "timestamp": 1784391921574
+      },
+      "title": "newbie",
+      "owned_titles": [
+        "none",
+        "newbie"
+      ],
+      "chat_color": "#e2e8f0",
+      "max_level": 5,
+      "inscriptions": [],
+      "equipped": []
+    },
+    "樱花": {
+      "uid": "ue22e4b56dec",
+      "password": "$pbkdf2$100000$rJEtRSHUH3Jadt+6yuiC0w==$vwQde2UbZ0Mac+Sn01oNdNZU5+wTSkXEhqFfxq6NKRY=",
+      "email": "",
+      "coins": 8369,
+      "owned_ball_skins": [
+        "default",
+        "forest"
+      ],
+      "owned_bg_skins": [
+        "default",
+        "sakura"
+      ],
+      "ball_skin": "forest",
+      "bg_skin": "sakura",
+      "save": {
+        "level": 9,
+        "score": 21463,
+        "coins": 103,
+        "totalDistance": 32626.062679483162,
+        "timestamp": 1785047158666
+      },
+      "title": "newbie",
+      "owned_titles": [
+        "none",
+        "newbie"
+      ],
+      "chat_color": "#e2e8f0",
+      "max_level": 11,
+      "last_ip": "182.118.238.21",
+      "total_score": 1481230,
+      "inscriptions": [
+        {
+          "id": "gale",
+          "level": 1
+        },
+        {
+          "id": "wisdom",
+          "level": 1
+        },
+        {
+          "id": "guard",
+          "level": 1
+        },
+        {
+          "id": "guard",
+          "level": 1
+        },
+        {
+          "id": "wisdom",
+          "level": 1
+        },
+        {
+          "id": "gale",
+          "level": 2
+        },
+        {
+          "id": "gale",
+          "level": 1
+        },
+        {
+          "id": "gale",
+          "level": 1
+        },
+        {
+          "id": "frost",
+          "level": 1
+        },
+        {
+          "id": "luck",
+          "level": 1
+        },
+        {
+          "id": "gale",
+          "level": 1
+        },
+        {
+          "id": "flame",
+          "level": 2
+        },
+        {
+          "id": "huisheng",
+          "level": 2
+        },
+        {
+          "id": "luck",
+          "level": 2
+        },
+        {
+          "id": "gold",
+          "level": 2
+        }
+      ],
+      "equipped": [
+        {
+          "id": "huisheng",
+          "level": 2
+        },
+        {
+          "id": "gold",
+          "level": 2
+        }
+      ],
+      "coin_log": [
+        {
+          "t": 1784960267,
+          "delta": 175,
+          "reason": "游戏结算·关卡11",
+          "balance": 7929
+        },
+        {
+          "t": 1784960388,
+          "delta": 131,
+          "reason": "游戏结算·关卡11",
+          "balance": 8060
+        },
+        {
+          "t": 1785047160,
+          "delta": 309,
+          "reason": "游戏结算·关卡11（含铭文加成）",
+          "balance": 8369
+        }
+      ]
+    },
+    "去": {
+      "uid": "u6ac68a6654f",
+      "password": "$pbkdf2$100000$i0Vlcevzbne8yyUiwvL4zQ==$ZNU4iH/3Q5q2gZAW3rb51kfDkoiGZY+C9d/HWIXrLTc=",
+      "email": "",
+      "coins": 25,
+      "owned_ball_skins": [
+        "default"
+      ],
+      "owned_bg_skins": [
+        "default"
+      ],
+      "ball_skin": "default",
+      "bg_skin": "default",
+      "save": {
+        "level": 1,
+        "score": 617,
+        "coins": 0,
+        "totalDistance": 1235.942399999997,
+        "timestamp": 1784629352326
+      },
+      "title": "newbie",
+      "owned_titles": [
+        "none",
+        "newbie"
+      ],
+      "chat_color": "#e2e8f0",
+      "reg_ip": "127.0.0.1",
+      "last_ip": "127.0.0.1",
+      "max_level": 3,
+      "inscriptions": [],
+      "equipped": []
+    },
+    "1": {
+      "uid": "u4b2b73f3727",
+      "password": "$pbkdf2$100000$kYojbogdoKywbAWOmbYoGA==$vvaFQkvRDjpG0XccwYrtwi0iMZgBBj3rg+atQ24mmpU=",
+      "email": "",
+      "coins": 20,
+      "owned_ball_skins": [
+        "default"
+      ],
+      "owned_bg_skins": [
+        "default"
+      ],
+      "ball_skin": "default",
+      "bg_skin": "default",
+      "save": {
+        "level": 5,
+        "score": 6700,
+        "coins": 20,
+        "totalDistance": 11401.585754511936,
+        "timestamp": 1784646920844
+      },
+      "title": "newbie",
+      "owned_titles": [
+        "none",
+        "newbie"
+      ],
+      "chat_color": "#e2e8f0",
+      "reg_ip": "127.0.0.1",
+      "last_ip": "127.0.0.1",
+      "max_level": 5,
+      "inscriptions": [],
+      "equipped": []
+    },
+    "green": {
+      "uid": "u73ed11b3ed3",
+      "password": "$pbkdf2$100000$BYqL+4FR7/CXEbvWQ4G21w==$6ajpqH829jusSxpOgtKv78K6drEvT9s8HaaUkBO5kx4=",
+      "email": "",
+      "coins": 13,
+      "owned_ball_skins": [
+        "default"
+      ],
+      "owned_bg_skins": [
+        "default"
+      ],
+      "ball_skin": "default",
+      "bg_skin": "default",
+      "save": {
+        "level": 2,
+        "score": 1349,
+        "coins": 5,
+        "totalDistance": 2198.2507900758424,
+        "timestamp": 1784715870967
+      },
+      "title": "newbie",
+      "owned_titles": [
+        "none",
+        "newbie"
+      ],
+      "chat_color": "#e2e8f0",
+      "reg_ip": "127.0.0.1",
+      "last_ip": "127.0.0.1",
+      "max_level": 3,
+      "inscriptions": [],
+      "total_score": 1797,
+      "equipped": []
+    },
+    "Mm": {
+      "uid": "u75be5567ef6",
+      "password": "$pbkdf2$100000$HPAEIeqErxrarkoZP1QfvA==$D2T3aCvuI5gHf5F6oEsztfnTLAjrqNqESrao7nMDrns=",
+      "email": "",
+      "coins": 2,
+      "owned_ball_skins": [
+        "default"
+      ],
+      "owned_bg_skins": [
+        "default"
+      ],
+      "ball_skin": "default",
+      "bg_skin": "default",
+      "save": {
+        "level": 1,
+        "score": 347,
+        "coins": 0,
+        "totalDistance": 694.8480000000011,
+        "timestamp": 1784711349674
+      },
+      "title": "newbie",
+      "owned_titles": [
+        "none",
+        "newbie"
+      ],
+      "chat_color": "#e2e8f0",
+      "reg_ip": "192.168.1.12",
+      "last_ip": "192.168.1.12",
+      "max_level": 1,
+      "inscriptions": [],
+      "equipped": []
+    },
+    "hhh": {
+      "uid": "u949409ec1f6",
+      "password": "$pbkdf2$100000$Lk0A44x7VRVbnmaPlkbwAw==$xDsUQSLoQNX3zvPvLKqdG3W3+clCL3vHRXmw2d1PpQ0=",
+      "email": "",
+      "coins": 9,
+      "owned_ball_skins": [
+        "default"
+      ],
+      "owned_bg_skins": [
+        "default"
+      ],
+      "ball_skin": "default",
+      "bg_skin": "default",
+      "save": {
+        "level": 2,
+        "score": 1437,
+        "coins": 4,
+        "totalDistance": 2474.0808701597502,
+        "timestamp": 1785556698398
+      },
+      "title": "newbie",
+      "owned_titles": [
+        "none",
+        "newbie"
+      ],
+      "chat_color": "#e2e8f0",
+      "inscriptions": [],
+      "equipped": [],
+      "reg_ip": "1.196.15.119",
+      "last_ip": "1.196.15.119",
+      "last_online": 1785556700,
+      "max_level": 2,
+      "coin_log": [
+        {
+          "t": 1785556650,
+          "delta": 5,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 5
+        },
+        {
+          "t": 1785556700,
+          "delta": 4,
+          "reason": "游戏结算·关卡2（含铭文加成）",
+          "balance": 9
+        }
+      ],
+      "total_score": 3299
+    }
+  },
+  "leaderboards": {
+    "level": [
+      {
+        "name": "晚晴_服主",
+        "value": 12
+      },
+      {
+        "name": "樱花",
+        "value": 11
+      },
+      {
+        "name": "疯狂的小李",
+        "value": 10
+      },
+      {
+        "name": "ABC",
+        "value": 10
+      },
+      {
+        "name": "疯狂的小李小号",
+        "value": 7
+      },
+      {
+        "name": "黑色条纹",
+        "value": 6
+      },
+      {
+        "name": "dnju",
+        "value": 5
+      },
+      {
+        "name": "Nang0ng",
+        "value": 5
+      },
+      {
+        "name": "1",
+        "value": 5
+      },
+      {
+        "name": "凑晚清",
+        "value": 4
+      },
+      {
+        "name": "宵崎奏小美女",
+        "value": 4
+      },
+      {
+        "name": "卡卡罗",
+        "value": 3
+      },
+      {
+        "name": "去",
+        "value": 3
+      },
+      {
+        "name": "green",
+        "value": 3
+      },
+      {
+        "name": "a",
+        "value": 2
+      },
+      {
+        "name": "JASONO07793",
+        "value": 2
+      },
+      {
+        "name": "伊洛玛丽",
+        "value": 2
+      },
+      {
+        "name": "1111",
+        "value": 2
+      },
+      {
+        "name": "hhh",
+        "value": 2
+      },
+      {
+        "name": "哦哦哦了",
+        "value": 2
+      },
+      {
+        "name": "32767",
+        "value": 1
+      },
+      {
+        "name": "dzyyy",
+        "value": 1
+      },
+      {
+        "name": "wsml",
+        "value": 1
+      },
+      {
+        "name": "Mm",
+        "value": 1
+      }
+    ],
+    "coins": [
+      {
+        "name": "樱花",
+        "value": 8369
+      },
+      {
+        "name": "晚晴_服主",
+        "value": 7252
+      },
+      {
+        "name": "ABC",
+        "value": 902
+      },
+      {
+        "name": "哦哦哦了",
+        "value": 288
+      },
+      {
+        "name": "疯狂的小李小号",
+        "value": 282
+      },
+      {
+        "name": "疯狂的小李",
+        "value": 124
+      },
+      {
+        "name": "黑色条纹",
+        "value": 88
+      },
+      {
+        "name": "dnju",
+        "value": 85
+      },
+      {
+        "name": "Nang0ng",
+        "value": 68
+      },
+      {
+        "name": "宵崎奏小美女",
+        "value": 58
+      },
+      {
+        "name": "凑晚清",
+        "value": 57
+      },
+      {
+        "name": "卡卡罗",
+        "value": 34
+      },
+      {
+        "name": "32767",
+        "value": 26
+      },
+      {
+        "name": "去",
+        "value": 25
+      },
+      {
+        "name": "1",
+        "value": 20
+      },
+      {
+        "name": "伊洛玛丽",
+        "value": 14
+      },
+      {
+        "name": "green",
+        "value": 13
+      },
+      {
+        "name": "JASONO07793",
+        "value": 11
+      },
+      {
+        "name": "1111",
+        "value": 10
+      },
+      {
+        "name": "hhh",
+        "value": 9
+      },
+      {
+        "name": "a",
+        "value": 6
+      },
+      {
+        "name": "Mm",
+        "value": 2
+      },
+      {
+        "name": "dzyyy",
+        "value": 0
+      },
+      {
+        "name": "wsml",
+        "value": 0
+      }
+    ],
+    "score": [
+      {
+        "name": "樱花",
+        "value": 1481230
+      },
+      {
+        "name": "ABC",
+        "value": 1128146
+      },
+      {
+        "name": "晚晴_服主",
+        "value": 299782
+      },
+      {
+        "name": "疯狂的小李",
+        "value": 259709
+      },
+      {
+        "name": "dnju",
+        "value": 7980
+      },
+      {
+        "name": "1",
+        "value": 6700
+      },
+      {
+        "name": "凑晚清",
+        "value": 6613
+      },
+      {
+        "name": "宵崎奏小美女",
+        "value": 6449
+      },
+      {
+        "name": "Nang0ng",
+        "value": 6133
+      },
+      {
+        "name": "疯狂的小李小号",
+        "value": 4576
+      },
+      {
+        "name": "hhh",
+        "value": 3299
+      },
+      {
+        "name": "卡卡罗",
+        "value": 2601
+      },
+      {
+        "name": "黑色条纹",
+        "value": 2235
+      },
+      {
+        "name": "哦哦哦了",
+        "value": 1921
+      },
+      {
+        "name": "a",
+        "value": 1915
+      },
+      {
+        "name": "1111",
+        "value": 1866
+      },
+      {
+        "name": "green",
+        "value": 1797
+      },
+      {
+        "name": "JASONO07793",
+        "value": 1551
+      },
+      {
+        "name": "wsml",
+        "value": 626
+      },
+      {
+        "name": "去",
+        "value": 617
+      },
+      {
+        "name": "dzyyy",
+        "value": 495
+      },
+      {
+        "name": "32767",
+        "value": 456
+      },
+      {
+        "name": "伊洛玛丽",
+        "value": 447
+      },
+      {
+        "name": "Mm",
+        "value": 347
+      }
+    ]
+  },
+  "owner_uid": "u5f796efb09f",
+  "announcement": {
+    "title": "欢迎来到滚动的小球",
+    "text": "我们制造最难绷的游戏！保证让每个玩家都能红温！",
+    "contact": "QQ：2917149421",
+    "enabled": true
+  },
+  "bans": {
+    "accounts": [
+      {
+        "value": "QA_CHATREN",
+        "reason": "QA",
+        "at": 0,
+        "duration": 0,
+        "expires": null
+      }
+    ],
+    "ips": [],
+    "uids": []
+  }
+}
